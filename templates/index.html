@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Standard Tracker</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="sticky-header">
+      <div class="header-row">
+        <div class="field">
+          <label for="class-select">Class</label>
+          <select id="class-select" aria-label="Class"></select>
+        </div>
+        <div class="field">
+          <label for="date-input">Date</label>
+          <input type="date" id="date-input" value="{{ today }}" />
+        </div>
+        <div class="field">
+          <label for="standard-select">Standard</label>
+          <select id="standard-select" aria-label="Standard"></select>
+        </div>
+        <div class="field read-rubric">
+          <button id="read-rubric" type="button">Read rubric</button>
+        </div>
+      </div>
+      <div class="header-row">
+        <div class="field wide">
+          <label for="standard-code">Standard code (optional)</label>
+          <input id="standard-code" type="text" placeholder="e.g., 3 OA 1" />
+        </div>
+        <div class="field wide">
+          <label for="standard-statement">Standard statement</label>
+          <input id="standard-statement" type="text" placeholder="Enter the standard statement" />
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button id="add-standard" type="button">Add standard</button>
+        </div>
+      </div>
+      <div class="header-row">
+        <div class="field wide">
+          <label for="focus-note">Lesson focus note</label>
+          <input id="focus-note" type="text" placeholder="Optional focus for this lesson" />
+        </div>
+        <div class="field wide">
+          <label for="session-select">Session history</label>
+          <select id="session-select" aria-label="Session history"></select>
+        </div>
+      </div>
+      <div class="header-row controls">
+        <div class="field">
+          <label for="filter-level">Filter by level</label>
+          <select id="filter-level">
+            <option value="">All</option>
+            <option value="Not Observed">Not Observed</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filter-evidence">Evidence type</label>
+          <select id="filter-evidence">
+            <option value="">All</option>
+            <option value="Oral">Oral</option>
+            <option value="Written">Written</option>
+            <option value="Work Sample">Work Sample</option>
+            <option value="Observation">Observation</option>
+            <option value="Small Group">Small Group</option>
+            <option value="Exit Ticket">Exit Ticket</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filter-supports">Supports used</label>
+          <select id="filter-supports">
+            <option value="">All</option>
+            <option value="sentence frames">Sentence frames</option>
+            <option value="manipulatives">Manipulatives</option>
+            <option value="read aloud">Read aloud</option>
+            <option value="extra time">Extra time</option>
+            <option value="partner">Partner</option>
+            <option value="translated directions">Translated directions</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="privacy-toggle">Privacy mode</label>
+          <input type="checkbox" id="privacy-toggle" />
+          <span class="help">First name + last initial</span>
+        </div>
+        <div class="field">
+          <button id="export-session" type="button">Export session CSV</button>
+        </div>
+        <div class="field">
+          <button id="export-longitudinal" type="button">Export longitudinal CSV</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="roster-controls">
+        <div class="field">
+          <label for="new-student">Add student</label>
+          <div class="inline">
+            <input id="new-student" type="text" placeholder="Student name" />
+            <button id="add-student" type="button">Add</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bulk-not-observed">Bulk action</label>
+          <button id="bulk-not-observed" type="button">Mark all not observed</button>
+          <button id="bulk-clear" type="button">Clear all</button>
+        </div>
+      </section>
+
+      <section class="roster">
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th class="center">Level</th>
+              <th>Evidence type</th>
+              <th>Supports used</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="roster-body"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="rubric-dialog">
+    <div class="dialog-header">
+      <h2>Rubric descriptors</h2>
+      <button id="close-rubric" type="button">Close</button>
+    </div>
+    <div id="rubric-content"></div>
+    <button id="save-rubric" type="button">Save rubric</button>
+  </dialog>
+
+  <div class="offline-banner" id="offline-banner" aria-live="polite">
+    Offline mode: changes will sync when you reconnect.
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
