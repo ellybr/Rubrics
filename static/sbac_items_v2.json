@@ -1,0 +1,313 @@
+[
+  {
+    "id": "G3-C1-001",
+    "grade": 3,
+    "claim": 1,
+    "claim_name": "Concepts and Procedures",
+    "standard": "3.OA.A.1",
+    "domain": "Operations and Algebraic Thinking",
+    "difficulty": "easy",
+    "item_type": "multiple_choice",
+    "question": "There are 5 bags of oranges. Each bag holds 4 oranges. Which equation shows the total number of oranges?",
+    "choices": {
+      "A": "5 + 4 = 9",
+      "B": "5 × 4 = 20",
+      "C": "5 + 5 + 5 + 5 = 20",
+      "D": "4 × 4 = 16"
+    },
+    "correct_answer": "B",
+    "explanation": "There are 5 equal groups with 4 oranges in each group. Multiplication shows equal groups put together: 5 × 4 = 20 oranges in all.",
+    "misconception_tags": [
+      "adds factors instead of multiplying (5 + 4 = 9)",
+      "uses repeated addition with the wrong factor — 5 added 4 times instead of 4 added 5 times",
+      "uses one factor twice instead of both (4 × 4 = 16)"
+    ]
+  },
+  {
+    "id": "G3-C1-002",
+    "grade": 3,
+    "claim": 1,
+    "claim_name": "Concepts and Procedures",
+    "standard": "3.NF.A.1",
+    "domain": "Number and Operations — Fractions",
+    "difficulty": "easy",
+    "item_type": "multiple_choice",
+    "question": "A ribbon is cut into 6 equal pieces. Tomas uses 4 of the pieces. Which fraction shows how much of the ribbon Tomas used?",
+    "choices": {
+      "A": "6/4",
+      "B": "2/6",
+      "C": "4/10",
+      "D": "4/6"
+    },
+    "correct_answer": "D",
+    "explanation": "The ribbon was cut into 6 equal pieces, so the denominator (bottom number) is 6. Tomas used 4 pieces, so the numerator (top number) is 4. The fraction is 4/6.",
+    "misconception_tags": [
+      "flips numerator and denominator (writes 6/4 instead of 4/6)",
+      "counts the remaining pieces instead of the used pieces (6 − 4 = 2, writes 2/6)",
+      "adds numerator and denominator to form a new denominator (4 + 6 = 10, writes 4/10)"
+    ]
+  },
+  {
+    "id": "G3-C1-003",
+    "grade": 3,
+    "claim": 1,
+    "claim_name": "Concepts and Procedures",
+    "standard": "3.NBT.A.1",
+    "domain": "Number and Operations in Base Ten",
+    "difficulty": "medium",
+    "item_type": "multiple_choice",
+    "question": "What is 463 rounded to the nearest ten?",
+    "choices": {
+      "A": "400",
+      "B": "460",
+      "C": "470",
+      "D": "500"
+    },
+    "correct_answer": "B",
+    "explanation": "To round to the nearest ten, look at the ones digit: 3. Since 3 is less than 5, the tens digit stays the same. 463 rounded to the nearest ten is 460.",
+    "misconception_tags": [
+      "rounds to nearest hundred instead of nearest ten (gets 400 or 500)",
+      "rounds up when the ones digit is less than 5 (gets 470)",
+      "changes the hundreds digit instead of using the ones digit as a guide"
+    ]
+  },
+  {
+    "id": "G3-C1-004",
+    "grade": 3,
+    "claim": 1,
+    "claim_name": "Concepts and Procedures",
+    "standard": "3.OA.A.1",
+    "domain": "Operations and Algebraic Thinking",
+    "difficulty": "medium",
+    "item_type": "multi_select",
+    "question": "Which expressions have the same value as 6 × 9? Select ALL that apply.",
+    "choices": {
+      "A": "9 × 6",
+      "B": "6 + 9",
+      "C": "9 + 9 + 9 + 9 + 9 + 9",
+      "D": "6 + 6 + 6 + 6 + 6 + 6 + 6 + 6 + 6",
+      "E": "3 × 18"
+    },
+    "correct_answer": ["A", "C", "D", "E"],
+    "explanation": "6 × 9 = 54. Checking each: 9 × 6 = 54 ✓ (switching order does not change the product). 9 added 6 times = 54 ✓. 6 added 9 times = 54 ✓. 3 × 18 = 54 ✓. Only 6 + 9 = 15, which is not equal to 54.",
+    "misconception_tags": [
+      "thinks switching factor order changes the product and skips choice A",
+      "selects B because it contains the same digits as the original expression",
+      "confuses which factor to repeat in the repeated addition model",
+      "does not recognize equivalent multiplication expressions like 3 × 18"
+    ]
+  },
+  {
+    "id": "G3-C2-001",
+    "grade": 3,
+    "claim": 2,
+    "claim_name": "Problem Solving",
+    "standard": "3.OA.A.3",
+    "domain": "Operations and Algebraic Thinking",
+    "difficulty": "medium",
+    "item_type": "multiple_choice",
+    "question": "A bakery makes 7 batches of cookies. Each batch has 8 cookies. In the morning, the bakery sells 30 cookies. How many cookies does the bakery have left?",
+    "choices": {
+      "A": "15",
+      "B": "26",
+      "C": "56",
+      "D": "86"
+    },
+    "correct_answer": "B",
+    "explanation": "Step 1: Find the total cookies made — 7 × 8 = 56. Step 2: Subtract what was sold — 56 − 30 = 26 cookies left.",
+    "misconception_tags": [
+      "adds the factors instead of multiplying and ignores the subtraction (7 + 8 = 15)",
+      "stops after the first step without subtracting (7 × 8 = 56)",
+      "adds 30 instead of subtracting it (56 + 30 = 86)"
+    ]
+  },
+  {
+    "id": "G3-C2-002",
+    "grade": 3,
+    "claim": 2,
+    "claim_name": "Problem Solving",
+    "standard": "3.OA.A.3",
+    "domain": "Operations and Algebraic Thinking",
+    "difficulty": "medium",
+    "item_type": "short_response",
+    "question": "A school library has 45 books to place equally onto 9 shelves. How many books go on each shelf? Show your work and explain how you found your answer.",
+    "choices": null,
+    "correct_answer": "5",
+    "gradeAs": "firstnumber",
+    "explanation": "To find books per shelf, divide the total by the number of shelves: 45 ÷ 9 = 5. Each shelf gets 5 books. You can check by multiplying: 5 × 9 = 45.",
+    "misconception_tags": [
+      "subtracts instead of divides (45 − 9 = 36)",
+      "adds instead of divides (45 + 9 = 54)",
+      "multiplies instead of divides (45 × 9 = 405)",
+      "confuses the total with the number of groups when setting up the equation"
+    ],
+    "scoring_criteria": {
+      "2": "Correct answer of 5 with work or explanation showing division (45 ÷ 9) or a valid equal-grouping strategy. A multiplication check (5 × 9 = 45) may be included.",
+      "1": "Sets up the correct division equation but makes a computation error, OR gives the correct answer of 5 with no work or explanation.",
+      "0": "Uses the wrong operation, gives an incorrect answer with no valid work, or makes no attempt."
+    },
+    "sample_response": "I need to share 45 books equally among 9 shelves, so I used division: 45 ÷ 9 = 5. Each shelf gets 5 books. I checked my answer by multiplying: 5 × 9 = 45, which matches the total in the problem."
+  },
+  {
+    "id": "G3-C2-003",
+    "grade": 3,
+    "claim": 2,
+    "claim_name": "Problem Solving",
+    "standard": "3.NBT.A.1",
+    "domain": "Number and Operations in Base Ten",
+    "difficulty": "hard",
+    "item_type": "multiple_choice",
+    "question": "A school store has 378 pencils and 245 markers. The principal wants to estimate the total number of items. She rounds each number to the nearest hundred and then adds. What is the principal's estimate?",
+    "choices": {
+      "A": "500",
+      "B": "600",
+      "C": "623",
+      "D": "700"
+    },
+    "correct_answer": "B",
+    "explanation": "Round 378: the tens digit is 7 (≥ 5), so round up to 400. Round 245: the tens digit is 4 (< 5), so round down to 200. Add: 400 + 200 = 600.",
+    "misconception_tags": [
+      "rounds 378 down to 300 by looking at the hundreds digit (3) instead of the tens digit (7)",
+      "does not round — adds exact values (378 + 245 = 623)",
+      "rounds 245 up to 300 by applying the rounding rule to the wrong digit"
+    ]
+  },
+  {
+    "id": "G3-C3-001",
+    "grade": 3,
+    "claim": 3,
+    "claim_name": "Communicating Reasoning",
+    "standard": "3.NF.A.1",
+    "domain": "Number and Operations — Fractions",
+    "difficulty": "hard",
+    "item_type": "short_response",
+    "question": "Rosa says that 2/6 is bigger than 2/4 because 6 is a bigger number than 4. Is Rosa right? Write Yes or No, and explain your thinking.",
+    "choices": null,
+    "correct_answer": "No",
+    "gradeAs": "firstword",
+    "explanation": "Rosa is wrong. When the top numbers are the same, a bigger bottom number means each piece is smaller — sixths are smaller than fourths. So 2/6 is actually less than 2/4.",
+    "misconception_tags": [
+      "compares denominators directly without thinking about part size",
+      "believes a larger denominator always means a larger fraction",
+      "does not connect the denominator to how small or large each equal part is"
+    ],
+    "scoring_criteria": {
+      "2": "Writes No and gives a complete explanation connecting denominator size to part size (e.g., 'sixths are smaller pieces than fourths, so 2/6 is less than 2/4'). Explanation is mathematically correct and uses fraction vocabulary.",
+      "1": "Writes No but gives only a partial explanation, such as stating the answer without explaining why larger denominators produce smaller parts.",
+      "0": "Writes Yes, gives no explanation, or provides a mathematically incorrect justification."
+    },
+    "sample_response": "No, Rosa is wrong. When you cut something into more equal pieces, each piece gets smaller. Sixths are smaller pieces than fourths. That means 2/6 is actually less than 2/4, not bigger. If you drew both fractions on a number line, 2/6 would be closer to 0 than 2/4 would."
+  },
+  {
+    "id": "G3-C3-002",
+    "grade": 3,
+    "claim": 3,
+    "claim_name": "Communicating Reasoning",
+    "standard": "3.OA.A.3",
+    "domain": "Operations and Algebraic Thinking",
+    "difficulty": "medium",
+    "item_type": "short_response",
+    "question": "A student wrote the equation 8 × 4 = 32. Is the equation correct? Write Yes or No. Then show or explain TWO different ways to check.",
+    "choices": null,
+    "correct_answer": "Yes",
+    "gradeAs": "firstword",
+    "explanation": "8 × 4 = 32 is correct. You can verify with repeated addition (4+4+4+4+4+4+4+4=32), division (32÷4=8), skip-counting by 4 eight times, an array model, or the commutative property (4×8=32).",
+    "misconception_tags": [
+      "only restates the equation rather than using a verification strategy",
+      "cannot connect multiplication to its inverse operation (division)",
+      "produces only one strategy when two are requested",
+      "applies a correct strategy but makes a computation error in checking"
+    ],
+    "scoring_criteria": {
+      "2": "Writes Yes and provides two distinct, valid strategies with correct computation — for example, repeated addition AND division; skip-counting AND an array; commutative property AND repeated addition.",
+      "1": "Writes Yes and provides one valid strategy correctly, OR provides two strategies but one contains a computation error.",
+      "0": "Writes No, provides no valid strategy, restates the original equation only, or gives two incorrect responses."
+    },
+    "sample_response": "Yes, 8 × 4 = 32 is correct. Way 1 — Repeated addition: 4 + 4 + 4 + 4 + 4 + 4 + 4 + 4 = 32. That matches! Way 2 — Division: if 8 × 4 = 32, then 32 ÷ 4 should equal 8. I checked: 32 ÷ 4 = 8. Both ways confirm the equation is correct."
+  },
+  {
+    "id": "G3-C4-001",
+    "grade": 3,
+    "claim": 4,
+    "claim_name": "Modeling and Data Analysis",
+    "standard": "3.MD.B.3",
+    "domain": "Measurement and Data",
+    "difficulty": "easy",
+    "item_type": "table_input",
+    "question": "The table below shows the number of books four students read during March. Use the data to answer the three questions.",
+    "choices": {
+      "table": {
+        "headers": ["Student", "Books Read"],
+        "rows": [
+          ["Aaliya", "8"],
+          ["Ben", "5"],
+          ["Carla", "11"],
+          ["Dion", "6"]
+        ]
+      },
+      "sub_questions": [
+        "How many books did Carla read?",
+        "How many more books did Aaliya read than Ben?",
+        "How many books did all 4 students read in all?"
+      ]
+    },
+    "correct_answer": ["11", "3", "30"],
+    "explanation": "Carla read 11 books (read directly from the table). Aaliya (8) − Ben (5) = 3 more books for Aaliya. Total: 8 + 5 + 11 + 6 = 30 books.",
+    "misconception_tags": [
+      "reads the wrong row from the table",
+      "subtracts the smaller value from the total instead of comparing the two named values",
+      "leaves out one student when computing the total",
+      "confuses 'how many more' with 'how many in all'"
+    ]
+  },
+  {
+    "id": "G3-C4-002",
+    "grade": 3,
+    "claim": 4,
+    "claim_name": "Modeling and Data Analysis",
+    "standard": "3.MD.B.3",
+    "domain": "Measurement and Data",
+    "difficulty": "easy",
+    "item_type": "multiple_choice",
+    "question": "The picture graph below shows how many glasses of water four students drank in one day. Each □ stands for 2 glasses of water.\n\nPetra:  □ □ □\nQuinn:  □ □ □ □ □\nReed:   □ □\nSasha:  □ □ □ □\n\nHow many glasses of water did Quinn drink?",
+    "choices": {
+      "A": "5",
+      "B": "7",
+      "C": "10",
+      "D": "20"
+    },
+    "correct_answer": "C",
+    "explanation": "Quinn has 5 symbols. Each symbol equals 2 glasses, so multiply: 5 × 2 = 10 glasses of water.",
+    "misconception_tags": [
+      "counts the number of symbols without applying the scale (gets 5)",
+      "adds the symbol count and scale value instead of multiplying (5 + 2 = 7)",
+      "misreads the key and multiplies by 4 instead of 2 (5 × 4 = 20)"
+    ]
+  },
+  {
+    "id": "G3-C4-003",
+    "grade": 3,
+    "claim": 4,
+    "claim_name": "Modeling and Data Analysis",
+    "standard": "3.MD.B.3",
+    "domain": "Measurement and Data",
+    "difficulty": "hard",
+    "item_type": "multi_select",
+    "question": "The picture graph below shows how many pages five friends read last week. Each ★ stands for 4 pages.\n\nAmy: ★ ★ ★\nBen: ★ ★ ★ ★ ★\nCal: ★ ★\nDee: ★ ★ ★ ★\nEve: ★ ★ ★ ★ ★ ★\n\nWhich statements are TRUE? Select ALL that apply.",
+    "choices": {
+      "A": "Eve read more pages than Ben.",
+      "B": "Amy read 12 pages.",
+      "C": "Cal read 6 pages.",
+      "D": "All five friends read 80 pages in all.",
+      "E": "Dee read twice as many pages as Cal."
+    },
+    "correct_answer": ["A", "B", "D", "E"],
+    "explanation": "Amy: 3 × 4 = 12 pages ✓. Ben: 5 × 4 = 20 pages. Cal: 2 × 4 = 8 pages (not 6 — C is false). Dee: 4 × 4 = 16 pages. Eve: 6 × 4 = 24 pages. Eve (24) > Ben (20) ✓. Total: 12 + 20 + 8 + 16 + 24 = 80 ✓. Dee (16) = 2 × Cal (8) ✓. Statement C is a trap — adding symbols and scale (2 + 4 = 6) instead of multiplying.",
+    "misconception_tags": [
+      "adds symbol count and scale instead of multiplying to find Cal's pages (2 + 4 = 6)",
+      "fails to apply the scale before comparing quantities",
+      "skips one student or makes an addition error when computing the total",
+      "does not verify a doubling claim by checking whether 16 = 2 × 8"
+    ]
+  }
+]

@@ -255,6 +255,15 @@ class RubricHandler(BaseHTTPRequestHandler):
             self.wfile.write(html.encode("utf-8"))
             return
 
+        if path == "/sbac":
+            html = (TEMPLATES_DIR / "sbac.html").read_text(encoding="utf-8")
+            self.send_response(HTTPStatus.OK.value)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(html.encode("utf-8"))))
+            self.end_headers()
+            self.wfile.write(html.encode("utf-8"))
+            return
+
         if path.startswith("/static/"):
             file_path = STATIC_DIR / path.replace("/static/", "")
             content_type = "text/plain"
@@ -262,6 +271,8 @@ class RubricHandler(BaseHTTPRequestHandler):
                 content_type = "text/css; charset=utf-8"
             elif file_path.suffix == ".js":
                 content_type = "application/javascript; charset=utf-8"
+            elif file_path.suffix == ".json":
+                content_type = "application/json; charset=utf-8"
             return serve_file(self, file_path, content_type)
 
         if path == "/api/classes":

@@ -1,0 +1,177 @@
+{
+  "title": "Grade 3 SBAC-Style Math Practice",
+  "subtitle": "12 questions · Common Core aligned",
+  "items": [
+    {
+      "id": "G3-C1-001",
+      "standard": "3.OA.A.1",
+      "claim": "Claim 1",
+      "domain": "Operations and Algebraic Thinking",
+      "difficulty": "easy",
+      "type": "multiple_choice",
+      "question": "There are 5 bags of oranges. Each bag holds 4 oranges.\n\nWhich equation shows the total number of oranges?",
+      "choices": ["5 + 4 = 9", "5 × 4 = 20", "5 + 5 + 5 + 5 = 20", "4 × 4 = 16"],
+      "correct": 1,
+      "explanation": "There are 5 equal groups with 4 oranges in each group. Multiplication shows equal groups: 5 × 4 = 20 oranges in all."
+    },
+    {
+      "id": "G3-C1-002",
+      "standard": "3.NF.A.1",
+      "claim": "Claim 1",
+      "domain": "Number and Operations — Fractions",
+      "difficulty": "easy",
+      "type": "multiple_choice",
+      "question": "A ribbon is cut into 6 equal pieces. Tomas uses 4 of the pieces.\n\nWhich fraction shows how much of the ribbon Tomas used?",
+      "choices": ["6/4", "2/6", "4/10", "4/6"],
+      "correct": 3,
+      "explanation": "The ribbon was cut into 6 equal pieces, so the denominator (bottom number) is 6. Tomas used 4 pieces, so the numerator (top number) is 4. The fraction is 4/6."
+    },
+    {
+      "id": "G3-C1-003",
+      "standard": "3.NBT.A.1",
+      "claim": "Claim 1",
+      "domain": "Number and Operations in Base Ten",
+      "difficulty": "medium",
+      "type": "multiple_choice",
+      "question": "What is 463 rounded to the nearest ten?",
+      "choices": ["400", "460", "470", "500"],
+      "correct": 1,
+      "explanation": "To round to the nearest ten, look at the ones digit: 3. Since 3 is less than 5, the tens digit stays the same. 463 rounded to the nearest ten is 460."
+    },
+    {
+      "id": "G3-C1-004",
+      "standard": "3.OA.A.1",
+      "claim": "Claim 1",
+      "domain": "Operations and Algebraic Thinking",
+      "difficulty": "medium",
+      "type": "multi_select",
+      "question": "Which expressions have the same value as 6 × 9?\n\nSelect ALL that apply.",
+      "choices": [
+        "9 × 6",
+        "6 + 9",
+        "9 + 9 + 9 + 9 + 9 + 9",
+        "6 + 6 + 6 + 6 + 6 + 6 + 6 + 6 + 6",
+        "3 × 18"
+      ],
+      "correct": [0, 2, 3, 4],
+      "explanation": "6 × 9 = 54. Check each: 9 × 6 = 54 ✓ (order does not change the product). 6 + 9 = 15 ✗. 9 added 6 times = 54 ✓. 6 added 9 times = 54 ✓. 3 × 18 = 54 ✓."
+    },
+    {
+      "id": "G3-C2-001",
+      "standard": "3.OA.A.3",
+      "claim": "Claim 2",
+      "domain": "Operations and Algebraic Thinking",
+      "difficulty": "medium",
+      "type": "multiple_choice",
+      "question": "A bakery makes 7 batches of cookies. Each batch has 8 cookies. In the morning, the bakery sells 30 cookies.\n\nHow many cookies does the bakery have left?",
+      "choices": ["15", "26", "56", "86"],
+      "correct": 1,
+      "explanation": "Step 1 — Find total cookies made: 7 × 8 = 56. Step 2 — Subtract what was sold: 56 − 30 = 26 cookies left."
+    },
+    {
+      "id": "G3-C2-002",
+      "standard": "3.OA.A.3",
+      "claim": "Claim 2",
+      "domain": "Operations and Algebraic Thinking",
+      "difficulty": "medium",
+      "type": "short_response",
+      "question": "A school library has 45 books to place equally onto 9 shelves.\n\nHow many books go on each shelf?",
+      "placeholder": "Type just the number...",
+      "correct": "5",
+      "gradeAs": "firstnumber",
+      "explanation": "Divide the total by the number of shelves: 45 ÷ 9 = 5. Each shelf gets 5 books. Check: 5 × 9 = 45 ✓"
+    },
+    {
+      "id": "G3-C2-003",
+      "standard": "3.NBT.A.1",
+      "claim": "Claim 2",
+      "domain": "Number and Operations in Base Ten",
+      "difficulty": "hard",
+      "type": "multiple_choice",
+      "question": "A school store has 378 pencils and 245 markers. The principal wants to estimate the total. She rounds each number to the nearest hundred, then adds.\n\nWhat is the principal's estimate?",
+      "choices": ["500", "600", "623", "700"],
+      "correct": 1,
+      "explanation": "Round 378: the tens digit is 7 (≥ 5), so round up to 400. Round 245: the tens digit is 4 (< 5), so round down to 200. Add: 400 + 200 = 600."
+    },
+    {
+      "id": "G3-C3-001",
+      "standard": "3.NF.A.1",
+      "claim": "Claim 3",
+      "domain": "Number and Operations — Fractions",
+      "difficulty": "hard",
+      "type": "short_response",
+      "question": "Rosa says that 2/6 is bigger than 2/4 because 6 is a bigger number than 4.\n\nIs Rosa right? Type Yes or No — then explain your thinking.",
+      "placeholder": "Type Yes or No, then explain why...",
+      "correct": "no",
+      "gradeAs": "firstword",
+      "explanation": "Rosa is wrong. When the top numbers are the same, a bigger bottom number means each piece is smaller. Sixths are smaller pieces than fourths, so 2/6 is actually less than 2/4."
+    },
+    {
+      "id": "G3-C3-002",
+      "standard": "3.OA.A.3",
+      "claim": "Claim 3",
+      "domain": "Operations and Algebraic Thinking",
+      "difficulty": "medium",
+      "type": "short_response",
+      "question": "A student wrote: 8 × 4 = 32.\n\nIs the equation correct? Type Yes or No — then show or explain TWO different ways to check.",
+      "placeholder": "Type Yes or No, then show two ways to check...",
+      "correct": "yes",
+      "gradeAs": "firstword",
+      "explanation": "Yes, 8 × 4 = 32 is correct. Ways to check: (1) Repeated addition: 4 + 4 + 4 + 4 + 4 + 4 + 4 + 4 = 32. (2) Division: 32 ÷ 4 = 8. (3) Skip-count by 4 eight times: 4, 8, 12, 16, 20, 24, 28, 32."
+    },
+    {
+      "id": "G3-C4-001",
+      "standard": "3.MD.B.3",
+      "claim": "Claim 4",
+      "domain": "Measurement and Data",
+      "difficulty": "easy",
+      "type": "table_input",
+      "question": "The table below shows how many books four students read in March.\n\nUse the data to answer each question.",
+      "table": {
+        "headers": ["Student", "Books Read"],
+        "rows": [
+          ["Aaliya", "8"],
+          ["Ben",    "5"],
+          ["Carla",  "11"],
+          ["Dion",   "6"]
+        ]
+      },
+      "subQuestions": [
+        { "label": "How many books did Carla read?",                   "correct": "11" },
+        { "label": "How many more books did Aaliya read than Ben?",    "correct": "3"  },
+        { "label": "How many books did all 4 students read in all?",   "correct": "30" }
+      ],
+      "explanation": "Carla: 11 books (from the table). Aaliya (8) − Ben (5) = 3 more books for Aaliya. Total: 8 + 5 + 11 + 6 = 30 books."
+    },
+    {
+      "id": "G3-C4-002",
+      "standard": "3.MD.B.3",
+      "claim": "Claim 4",
+      "domain": "Measurement and Data",
+      "difficulty": "easy",
+      "type": "multiple_choice",
+      "question": "The picture graph shows how many glasses of water four students drank in one day.\nEach □ stands for 2 glasses.\n\nPetra:  □ □ □\nQuinn:  □ □ □ □ □\nReed:   □ □\nSasha:  □ □ □ □\n\nHow many glasses of water did Quinn drink?",
+      "choices": ["5", "7", "10", "20"],
+      "correct": 2,
+      "explanation": "Quinn has 5 symbols. Each symbol = 2 glasses. Multiply: 5 × 2 = 10 glasses of water."
+    },
+    {
+      "id": "G3-C4-003",
+      "standard": "3.MD.B.3",
+      "claim": "Claim 4",
+      "domain": "Measurement and Data",
+      "difficulty": "hard",
+      "type": "multi_select",
+      "question": "Five friends read books last week. Each ★ stands for 4 pages.\n\nAmy: ★ ★ ★\nBen: ★ ★ ★ ★ ★\nCal: ★ ★\nDee: ★ ★ ★ ★\nEve: ★ ★ ★ ★ ★ ★\n\nWhich statements are TRUE? Select ALL that apply.",
+      "choices": [
+        "Eve read more pages than Ben.",
+        "Amy read 12 pages.",
+        "Cal read 6 pages.",
+        "All five friends read 80 pages in all.",
+        "Dee read twice as many pages as Cal."
+      ],
+      "correct": [0, 1, 3, 4],
+      "explanation": "Amy: 3×4=12 ✓. Ben: 5×4=20. Cal: 2×4=8 (not 6, so C is false). Dee: 4×4=16. Eve: 6×4=24. Eve(24) > Ben(20) ✓. Total: 12+20+8+16+24=80 ✓. Dee(16) = 2×Cal(8) ✓."
+    }
+  ]
+}

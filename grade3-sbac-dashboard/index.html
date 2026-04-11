@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grade 3 SBAC-Style Math Practice</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ===================================================
+       HEADER — always visible at the top
+       Shows the quiz title, current question number,
+       and a simple progress bar
+       =================================================== -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-title-block">
+        <h1 class="header-title">Grade 3 Math Practice</h1>
+        <p class="header-subtitle" id="header-subtitle">Loading…</p>
+      </div>
+      <div class="header-progress-block">
+        <span class="progress-label" id="progress-label">Question 1 of 12</span>
+        <div class="progress-bar-track" role="progressbar" aria-label="Quiz progress"
+             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================
+       MAIN CONTENT AREA
+       The JavaScript replaces everything inside #app
+       when moving between questions and the summary screen.
+       =================================================== -->
+  <main>
+    <div id="app" class="app-container">
+      <!-- Content is injected here by app.js -->
+      <div class="loading-screen">
+        <p>Loading questions…</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- app.js runs after the page loads (defer attribute) -->
+  <script src="assets/app.js" defer></script>
+
+</body>
+</html>

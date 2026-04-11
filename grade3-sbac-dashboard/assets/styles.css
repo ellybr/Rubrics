@@ -1,0 +1,792 @@
+/* ============================================================
+   GRADE 3 SBAC-STYLE MATH PRACTICE — Standalone Styles
+   Simple, modern, student-friendly. Mobile-first.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CSS Custom Properties (variables)
+   Change these to retheme the whole app in one place.
+   ------------------------------------------------------------ */
+:root {
+  --primary:        #4f46e5;   /* indigo — main brand color     */
+  --primary-light:  #e0e7ff;   /* light indigo for backgrounds  */
+  --primary-dark:   #3730a3;   /* darker indigo for hover       */
+
+  --success:        #16a34a;   /* green — correct answer        */
+  --success-light:  #dcfce7;   /* light green background        */
+
+  --error:          #dc2626;   /* red — wrong answer            */
+  --error-light:    #fee2e2;   /* light red background          */
+
+  --neutral-50:     #f8fafc;
+  --neutral-100:    #f1f5f9;
+  --neutral-200:    #e2e8f0;
+  --neutral-300:    #cbd5e1;
+  --neutral-400:    #94a3b8;
+  --neutral-600:    #475569;
+  --neutral-700:    #334155;
+  --neutral-900:    #0f172a;
+
+  --radius:         12px;      /* card corner radius            */
+  --radius-sm:      8px;
+  --shadow:         0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md:      0 4px 20px rgba(0, 0, 0, 0.12);
+
+  --font:           system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --max-width:      680px;     /* maximum content width         */
+
+  /* Claim colors (matching main dashboard) */
+  --claim1: #1d4ed8;
+  --claim2: #059669;
+  --claim3: #d97706;
+  --claim4: #7c3aed;
+}
+
+/* ------------------------------------------------------------
+   Reset & Base
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--neutral-100);
+  color: var(--neutral-900);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   Header
+   ------------------------------------------------------------ */
+.app-header {
+  background: white;
+  border-bottom: 2px solid var(--neutral-200);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 20px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.header-title-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  font-size: 0.8rem;
+  color: var(--neutral-600);
+  margin-top: 1px;
+}
+
+.header-progress-block {
+  flex-shrink: 0;
+  text-align: right;
+  min-width: 120px;
+}
+
+.progress-label {
+  font-size: 0.78rem;
+  color: var(--neutral-600);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.progress-bar-track {
+  width: 120px;
+  height: 6px;
+  background: var(--neutral-200);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-left: auto;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 99px;
+  transition: width 0.35s ease;
+}
+
+/* ------------------------------------------------------------
+   Main content wrapper
+   ------------------------------------------------------------ */
+main {
+  padding: 24px 16px 48px;
+}
+
+.app-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   Loading screen
+   ------------------------------------------------------------ */
+.loading-screen {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--neutral-400);
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------------------
+   Question Card
+   ------------------------------------------------------------ */
+.question-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 24px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Claim badge + metadata row */
+.question-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.claim-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 99px;
+  color: white;
+}
+.claim-badge[data-claim="Claim 1"] { background: var(--claim1); }
+.claim-badge[data-claim="Claim 2"] { background: var(--claim2); }
+.claim-badge[data-claim="Claim 3"] { background: var(--claim3); }
+.claim-badge[data-claim="Claim 4"] { background: var(--claim4); }
+
+.standard-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--neutral-600);
+  background: var(--neutral-100);
+  border: 1px solid var(--neutral-200);
+  border-radius: 99px;
+  padding: 3px 9px;
+}
+
+.difficulty-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 3px 9px;
+  margin-left: auto;
+}
+.difficulty-badge.easy   { color: #166534; background: #dcfce7; }
+.difficulty-badge.medium { color: #92400e; background: #fef3c7; }
+.difficulty-badge.hard   { color: #991b1b; background: #fee2e2; }
+
+/* Question text */
+.question-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--neutral-900);
+  margin-bottom: 22px;
+  /* pre-wrap preserves newlines in picture-graph questions
+     (lines with □ and ★ symbols) */
+  white-space: pre-wrap;
+}
+
+/* ------------------------------------------------------------
+   Multiple Choice Options
+   ------------------------------------------------------------ */
+.mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.mc-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--radius-sm);
+  background: white;
+  cursor: pointer;
+  font-size: 0.97rem;
+  font-family: var(--font);
+  color: var(--neutral-900);
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+}
+
+.mc-option:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* Selected (before checking) */
+.mc-option.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 600;
+}
+
+/* After checking — correct answer */
+.mc-option.is-correct {
+  border-color: var(--success);
+  background: var(--success-light);
+  color: #14532d;
+  font-weight: 600;
+}
+
+/* After checking — wrong selection */
+.mc-option.is-wrong {
+  border-color: var(--error);
+  background: var(--error-light);
+  color: #7f1d1d;
+}
+
+/* Dim unselected options after checking */
+.mc-option.dimmed {
+  opacity: 0.45;
+}
+
+/* Disabled state — no pointer events after checking */
+.mc-option:disabled {
+  cursor: default;
+}
+
+/* Letter label (A, B, C, D) */
+.mc-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--neutral-200);
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mc-option.selected .mc-letter  { background: var(--primary); color: white; }
+.mc-option.is-correct .mc-letter { background: var(--success); color: white; }
+.mc-option.is-wrong .mc-letter   { background: var(--error);   color: white; }
+
+/* ------------------------------------------------------------
+   Multi-Select (same visual as MC but checkboxes)
+   ------------------------------------------------------------ */
+.multi-select-hint {
+  font-size: 0.82rem;
+  color: var(--neutral-600);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+/* Multi-select uses the same .mc-option class; the letter area
+   shows a checkbox-style indicator instead */
+.mc-option .check-indicator {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neutral-300);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  font-size: 0.75rem;
+  color: transparent;
+}
+
+.mc-option.selected .check-indicator {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.mc-option.is-correct .check-indicator {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.mc-option.is-wrong .check-indicator {
+  background: var(--error);
+  border-color: var(--error);
+  color: white;
+}
+
+/* ------------------------------------------------------------
+   Short Response (text input)
+   ------------------------------------------------------------ */
+.short-response-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.short-response-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: var(--font);
+  color: var(--neutral-900);
+  background: white;
+  resize: vertical;
+  min-height: 56px;
+  line-height: 1.5;
+  transition: border-color 0.15s;
+}
+
+.short-response-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.short-response-input.is-correct {
+  border-color: var(--success);
+  background: var(--success-light);
+}
+
+.short-response-input.is-wrong {
+  border-color: var(--error);
+  background: var(--error-light);
+}
+
+.short-response-input:disabled {
+  cursor: default;
+}
+
+/* ------------------------------------------------------------
+   Table Input (data table + sub-questions)
+   ------------------------------------------------------------ */
+.data-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table th {
+  background: var(--primary);
+  color: white;
+  padding: 10px 14px;
+  font-weight: 700;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--neutral-200);
+  color: var(--neutral-700);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:nth-child(even) td {
+  background: var(--neutral-50);
+}
+
+/* Sub-questions list */
+.sub-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.sub-question {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sub-question-label {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.sub-question-input {
+  padding: 10px 14px;
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.97rem;
+  font-family: var(--font);
+  color: var(--neutral-900);
+  background: white;
+  max-width: 220px;
+  transition: border-color 0.15s;
+}
+
+.sub-question-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.sub-question-input.is-correct {
+  border-color: var(--success);
+  background: var(--success-light);
+}
+
+.sub-question-input.is-wrong {
+  border-color: var(--error);
+  background: var(--error-light);
+}
+
+.sub-question-input:disabled {
+  cursor: default;
+}
+
+/* ------------------------------------------------------------
+   Answer Controls Row (Check + Next buttons)
+   ------------------------------------------------------------ */
+.answer-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.97rem;
+  font-weight: 700;
+  font-family: var(--font);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.15s, transform 0.1s, opacity 0.15s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Primary — Check Answer */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+/* Secondary — Next Question */
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--primary-light);
+}
+
+/* Finish button on last question */
+.btn-finish {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.btn-finish:hover:not(:disabled) {
+  background: #15803d;
+}
+
+/* ------------------------------------------------------------
+   Feedback Panel (shown after checking)
+   ------------------------------------------------------------ */
+.feedback-panel {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  animation: fadeIn 0.2s ease;
+}
+
+.feedback-panel.feedback-correct {
+  background: var(--success-light);
+  border: 1px solid #86efac;
+  color: #14532d;
+}
+
+.feedback-panel.feedback-incorrect {
+  background: var(--error-light);
+  border: 1px solid #fca5a5;
+  color: #7f1d1d;
+}
+
+.feedback-header {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.feedback-icon {
+  font-size: 1.1rem;
+}
+
+.feedback-explanation {
+  margin-top: 6px;
+  color: var(--neutral-700);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   Summary Screen
+   ------------------------------------------------------------ */
+.summary-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 36px 32px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.summary-stars {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+}
+
+.summary-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--neutral-900);
+  margin-bottom: 6px;
+}
+
+.summary-score-text {
+  font-size: 1.1rem;
+  color: var(--neutral-600);
+  margin-bottom: 28px;
+}
+
+.summary-score-number {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Score ring */
+.score-ring-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.score-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) 0%, var(--neutral-200) 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.score-ring-inner {
+  width: 88px;
+  height: 88px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-ring-pct {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--neutral-900);
+}
+
+/* Per-item result list */
+.result-list {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.result-item {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200);
+  font-size: 0.88rem;
+}
+
+.result-item.result-correct {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.result-item.result-incorrect {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.result-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.result-status-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.result-question-preview {
+  font-weight: 600;
+  color: var(--neutral-800);
+  font-size: 0.88rem;
+  /* Trim long questions to one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.result-explanation {
+  font-size: 0.83rem;
+  color: var(--neutral-600);
+  line-height: 1.55;
+  margin-top: 4px;
+  /* Allow long explanations to wrap normally */
+  white-space: normal;
+}
+
+/* Try Again button */
+.btn-restart {
+  background: var(--primary);
+  color: white;
+  padding: 13px 32px;
+  font-size: 1rem;
+}
+
+.btn-restart:hover {
+  background: var(--primary-dark);
+}
+
+/* ------------------------------------------------------------
+   Responsive adjustments
+   ------------------------------------------------------------ */
+@media (max-width: 480px) {
+  .question-card,
+  .summary-card {
+    padding: 20px 16px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-progress-block {
+    width: 100%;
+    text-align: left;
+  }
+
+  .progress-bar-track {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .progress-label {
+    text-align: left;
+  }
+
+  .answer-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sub-question-input {
+    max-width: 100%;
+  }
+
+  .summary-card {
+    padding: 28px 20px;
+  }
+}

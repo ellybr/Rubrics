@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grade 3 SBAC-Style Math Practice</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="sbac-app">
+
+    <header class="sbac-header">
+      <div class="sbac-header-top">
+        <a href="/" class="back-link" aria-label="Back to tracker">&#8592; Tracker</a>
+        <div class="sbac-title-block">
+          <h1>Grade 3 SBAC-Style Math Practice</h1>
+          <p>12 items &middot; 4 Claims &middot; Common Core aligned</p>
+        </div>
+        <div id="score-badge" class="score-badge" aria-live="polite">0 / 12</div>
+      </div>
+      <div id="set-switcher" class="set-switcher" aria-label="Practice set">
+        <span class="set-label">Practice Set:</span>
+        <button class="set-btn active" data-set="1">Set 1</button>
+        <button class="set-btn" data-set="2">Set 2</button>
+      </div>
+      <div class="progress-bar-container" role="progressbar" aria-label="Items answered">
+        <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+      </div>
+    </header>
+
+    <nav class="claim-tabs" id="claim-tabs" aria-label="Filter by claim"></nav>
+
+    <main>
+      <div id="items-container" class="items-grid"></div>
+      <div id="score-summary" class="score-summary" hidden></div>
+    </main>
+
+  </div>
+
+  <!-- Rubric modal ─────────────────────────────────────────────────────── -->
+  <dialog id="rubric-modal" class="rubric-modal" aria-labelledby="rubric-modal-title">
+    <div class="rubric-modal-header">
+      <div>
+        <div id="rubric-modal-standard" class="rubric-modal-standard"></div>
+        <h2 id="rubric-modal-title" class="rubric-modal-title"></h2>
+        <div id="rubric-modal-claim" class="rubric-modal-claim"></div>
+      </div>
+      <button id="rubric-modal-close" class="rubric-modal-close" aria-label="Close rubric">&#215;</button>
+    </div>
+    <div id="rubric-modal-body" class="rubric-modal-body"></div>
+  </dialog>
+
+  <script src="/static/sbac.js"></script>
+</body>
+</html>
