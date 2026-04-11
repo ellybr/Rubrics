@@ -255,6 +255,15 @@ class RubricHandler(BaseHTTPRequestHandler):
             self.wfile.write(html.encode("utf-8"))
             return
 
+        if path == "/sbac":
+            html = (TEMPLATES_DIR / "sbac.html").read_text(encoding="utf-8")
+            self.send_response(HTTPStatus.OK.value)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(html.encode("utf-8"))))
+            self.end_headers()
+            self.wfile.write(html.encode("utf-8"))
+            return
+
         if path.startswith("/static/"):
             file_path = STATIC_DIR / path.replace("/static/", "")
             content_type = "text/plain"
