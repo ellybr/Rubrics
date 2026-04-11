@@ -1,6 +1,6 @@
 "use strict";
 
-const ITEMS = [
+const ITEMS_SET1 = [
   // ── Claim 1: Concepts & Procedures ──────────────────────────────────────
   {
     id: 1,
@@ -231,6 +231,11 @@ const DIFFICULTY_META = {
   medium: { label: "Medium", color: "#d97706", bg: "#fffbeb" },
   hard:   { label: "Hard",   color: "#dc2626", bg: "#fef2f2" },
 };
+
+// ── Active item set (can be swapped via the set switcher) ────────────────────
+
+let ITEMS = ITEMS_SET1;
+let activeSet = 1;
 
 // ── State ────────────────────────────────────────────────────────────────────
 
@@ -694,12 +699,102 @@ function checkAnswer(itemId) {
   });
 }
 
+// ── Item-set loading & normalization ─────────────────────────────────────────
+//
+// The JSON schema (sbac_items_v2.json) uses different field names from the
+// internal schema used by the renderers.  normalizeItem() bridges the gap.
+
+function letterToIndex(letter) {
+  return letter.toUpperCase().charCodeAt(0) - 65; // "A" → 0
+}
+
+function normalizeItem(raw) {
+  const type = raw.item_type;
+  const base = {
+    id:          raw.id,
+    claim:       raw.claim,
+    standard:    raw.standard,
+    domain:      raw.domain,
+    difficulty:  raw.difficulty,
+    type,
+    question:    raw.question,
+    explanation: raw.explanation,
+    gradeAs:     raw.gradeAs || "exact",
+    multistep:   false,
+    requiresExplanation: type === "short_response",
+  };
+
+  if (type === "multiple_choice") {
+    base.options = Object.values(raw.choices);
+    base.correct = letterToIndex(raw.correct_answer);
+  } else if (type === "multi_select") {
+    base.options = Object.values(raw.choices);
+    base.correct = raw.correct_answer.map(letterToIndex);
+  } else if (type === "short_response") {
+    base.correct      = [raw.correct_answer];
+    base.placeholder  = "Type your answer here...";
+  } else if (type === "table_input") {
+    base.tableData    = raw.choices.table;
+    base.subQuestions = raw.choices.sub_questions.map((label, i) => ({
+      label,
+      correct: raw.correct_answer[i],
+    }));
+  }
+
+  return base;
+}
+
+async function loadItemSet(setNum) {
+  if (setNum === 1) {
+    ITEMS     = ITEMS_SET1;
+    activeSet = 1;
+  } else {
+    try {
+      const res = await fetch("/static/sbac_items_v2.json");
+      if (!res.ok) throw new Error("fetch failed");
+      const raw = await res.json();
+      ITEMS     = raw.map(normalizeItem);
+      activeSet = 2;
+    } catch (_) {
+      // fall back to set 1 silently
+      ITEMS     = ITEMS_SET1;
+      activeSet = 1;
+    }
+  }
+  activeClaim = 0;
+  initState();
+  renderSetSwitcher();
+  renderClaimTabs();
+  renderItems();
+  updateProgress();
+}
+
+function renderSetSwitcher() {
+  const el = document.getElementById("set-switcher");
+  if (!el) return;
+  [1, 2].forEach((n) => {
+    const btn = el.querySelector(`[data-set="${n}"]`);
+    if (!btn) return;
+    btn.classList.toggle("active", activeSet === n);
+  });
+}
+
 // ── Boot ─────────────────────────────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", async () => {
   initState();
   initRubricModal();
   await loadRubrics();   // load before first render so rubric buttons appear immediately
+
+  // Wire set-switcher buttons
+  const switcher = document.getElementById("set-switcher");
+  if (switcher) {
+    switcher.querySelectorAll(".set-btn").forEach((btn) => {
+      btn.addEventListener("click", () => loadItemSet(Number(btn.dataset.set)));
+    });
+  }
+
+  renderSetSwitcher();
   renderClaimTabs();
   renderItems();
   updateProgress();

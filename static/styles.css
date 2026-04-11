@@ -770,6 +770,42 @@ main {
 
 /* SBAC responsive */
 
+/* Set switcher */
+
+.set-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.set-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.set-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  background: #f4f6fb;
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.set-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.set-btn:focus {
+  outline: 3px solid #cdd7ff;
+  outline-offset: 1px;
+}
+
 /* Item header right side (rubric button + item number) */
 
 .item-header-right {
