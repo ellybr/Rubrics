@@ -1,0 +1,112 @@
+{
+  "3.OA.A.1": {
+    "claim": "Claim 1",
+    "standard_name": "Interpret products of whole numbers as the total number of objects in equal groups",
+    "levels": {
+      "1": {
+        "student_friendly": "I am still learning what multiplication means. I need help connecting a multiplication problem to groups of objects.",
+        "teacher_look_for": "Student cannot connect a multiplication expression to equal-groups language. May add the two numbers, count all objects without grouping, or leave the problem blank. Does not yet distinguish between the number of groups and the size of each group. Models, if attempted, show unequal groups or random arrangement."
+      },
+      "2": {
+        "student_friendly": "I can draw groups to show what a multiplication problem means, but I sometimes need a picture or a tool to help me get started.",
+        "teacher_look_for": "Student draws equal groups or uses manipulatives to model a multiplication expression when given visual support or prompting. Can identify the number of groups and group size when shown a completed model, but may reverse factor roles or require a sentence frame to articulate meaning. Writes the equation after building the model rather than from the expression alone."
+      },
+      "3": {
+        "student_friendly": "I can explain what a multiplication problem means. I know that 4 × 6 means 4 groups of 6, and I can write an equation, draw equal groups, or make an array to show it — without any help.",
+        "teacher_look_for": "Student accurately interprets any multiplication expression in equal-groups language without support (e.g., 'This means 3 groups of 7'). Creates a matching model — equal groups, array, or number line — and writes a correct equation. Work shows consistent, correct assignment of factor roles across multiple examples."
+      },
+      "4": {
+        "student_friendly": "I can show the same multiplication problem in more than one way and explain why both ways give the same answer. I can also write my own story to match a multiplication equation.",
+        "teacher_look_for": "Student represents the same product using at least two distinct models (e.g., equal groups and an array) and explains in their own words why the total does not change when the factors switch order (commutative property). Constructs an original word problem that matches a given expression with factors correctly assigned to 'number of groups' and 'size of each group.' Explanation is complete and mathematically precise."
+      }
+    }
+  },
+  "3.OA.A.3": {
+    "claim": "Claim 2",
+    "standard_name": "Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities",
+    "levels": {
+      "1": {
+        "student_friendly": "I am still learning how to figure out what to do in a multiplication or division story problem.",
+        "teacher_look_for": "Student cannot identify the operation required by the problem context. May add all numbers present regardless of situation type, perform a random operation, or draw without connecting the representation to the problem. Does not distinguish between equal-groups problems and other situations. Work shows no evidence of re-reading the problem to identify the unknown."
+      },
+      "2": {
+        "student_friendly": "I can solve multiplication word problems when the numbers are familiar. I am still working on division problems and problems where the numbers are large.",
+        "teacher_look_for": "Student correctly solves multiplication problems using skip-counting, repeated addition, or drawing, but struggles with division or problems involving factors above 5. May correctly identify the operation but make computation errors that go unchecked. Division work relies on guess-and-check or counting back without a structured strategy. Does not yet write an equation to represent the situation."
+      },
+      "3": {
+        "student_friendly": "I can read a multiplication or division word problem, choose the right operation, and find the correct answer. I can write a number sentence that matches the problem.",
+        "teacher_look_for": "Student accurately solves both multiplication and division word problems within 100 across problem types (unknown product, unknown group size, unknown number of groups). Work includes a labeled equation that matches the problem structure. Consistently identifies the unknown quantity and selects an efficient strategy without prompting. Computation is accurate."
+      },
+      "4": {
+        "student_friendly": "I can solve multi-step and tricky word problems, check that my answer makes sense, and explain the steps I used — including why I chose multiplication or division.",
+        "teacher_look_for": "Student solves multi-step or non-routine problems, explains the solution pathway in writing or orally (e.g., 'I used division because I knew the total and needed to find equal groups'), and verifies reasonableness using an estimate or inverse operation. May compare two strategies and explain which is more efficient, or extend the problem by changing a condition and predicting the effect on the answer."
+      }
+    }
+  },
+  "3.NBT.A.1": {
+    "claim": "Claim 1",
+    "standard_name": "Use place value understanding to round whole numbers to the nearest 10 or 100",
+    "levels": {
+      "1": {
+        "student_friendly": "I am still learning how to round numbers. I am not yet sure which ten or hundred a number is closest to.",
+        "teacher_look_for": "Student cannot round consistently. May change only the ones digit to zero without considering the tens digit, copy the original number, or pick a value without reasoning. Shows no evidence of placing a number between two benchmark values. Cannot identify the two tens or two hundreds that a number falls between."
+      },
+      "2": {
+        "student_friendly": "I can round two-digit numbers to the nearest ten when I use a number line. I am still learning to round three-digit numbers on my own.",
+        "teacher_look_for": "Student rounds two-digit numbers to the nearest ten correctly using a number line or hundreds chart. May apply the rounding rule mechanically ('look at the ones digit; 5 or more, round up') without explaining why. Struggles to round three-digit numbers to the nearest hundred — often rounds to the nearest ten by mistake, or cannot identify the benchmark hundreds. Does not yet handle numbers ending in exactly 5 consistently."
+      },
+      "3": {
+        "student_friendly": "I can round any three-digit number to the nearest ten or hundred. I use place value to decide which benchmark number is closer.",
+        "teacher_look_for": "Student accurately rounds three-digit numbers to the nearest ten and to the nearest hundred without tools. Work shows identification of the two surrounding benchmarks and the midpoint (e.g., '347 is between 340 and 350; the midpoint is 345; 347 is above 345 so it rounds to 350'). Correctly handles numbers ending in exactly 5 by rounding up. Uses place value vocabulary (tens digit, hundreds digit) to explain decisions."
+      },
+      "4": {
+        "student_friendly": "I can round numbers and explain exactly why a number rounds up or down using the halfway point. I can also use rounding to estimate and decide whether my estimate makes sense for the problem.",
+        "teacher_look_for": "Student explains rounding decisions using the halfway-point rule and place value language unprompted. Applies rounding strategically to estimate sums or differences and evaluates whether the estimate is sufficient for the problem context (e.g., 'rounding to the nearest hundred is close enough here, but to the nearest ten is better here'). Identifies cases where rounding to the nearest ten versus the nearest hundred produces different levels of precision and justifies when each is appropriate."
+      }
+    }
+  },
+  "3.NF.A.1": {
+    "claim": "Claim 1",
+    "standard_name": "Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts; understand a/b as the quantity formed by a parts of size 1/b",
+    "levels": {
+      "1": {
+        "student_friendly": "I am still learning what fractions mean. I am working on splitting shapes into equal parts.",
+        "teacher_look_for": "Student cannot partition a shape into equal parts reliably, or names a fraction by counting shaded regions without checking that parts are equal in size. May conflate the fraction with a whole number (e.g., calling 3/4 'three' or 'four'). Does not connect the denominator to the count of equal parts or the numerator to the count of selected parts."
+      },
+      "2": {
+        "student_friendly": "I can name fractions like 1/2, 1/3, and 1/4 when I see a picture that is already divided into equal parts. I am still learning what the top number and bottom number each mean.",
+        "teacher_look_for": "Student correctly identifies unit fractions and simple non-unit fractions from correctly partitioned area models. Can match a fraction symbol to a labeled model but cannot consistently explain what the numerator and denominator each represent. Struggles with fractions on a number line, with fractions whose denominator exceeds 4, or with identifying a non-example (unequal parts labeled as a fraction)."
+      },
+      "3": {
+        "student_friendly": "I can explain that the bottom number tells how many equal parts the whole is divided into, and the top number tells how many of those parts I am counting. I can place fractions on a number line and draw my own fraction models.",
+        "teacher_look_for": "Student accurately represents fractions using area models and number lines, placing unit fractions and non-unit fractions between 0 and 1 with correct spacing. Explains the roles of numerator and denominator in their own words. Partitions models into equal-sized parts without being given a pre-divided figure. Work is labeled relative to the identified whole."
+      },
+      "4": {
+        "student_friendly": "I can show the same fraction in more than one way, explain why the parts must be equal, and use fractions to describe real things like parts of a shape, a set, or a recipe.",
+        "teacher_look_for": "Student represents the same fraction using at least two models (area model, number line, set model) and explains that changing the part sizes — even while keeping the count of shaded parts the same — changes the fraction. Identifies and explains non-examples (unequally partitioned figures incorrectly labeled as fractions). Connects fraction notation to a precise real-world context with accurate identification of the whole, and explains their reasoning in a complete mathematical statement."
+      }
+    }
+  },
+  "3.MD.B.3": {
+    "claim": "Claim 4",
+    "standard_name": "Draw a scaled picture graph and a scaled bar graph to represent a data set; solve one- and two-step problems using information presented in graphs",
+    "levels": {
+      "1": {
+        "student_friendly": "I am still learning how to read graphs. I can point to bars or pictures, but I am not yet sure how to find the number each bar or symbol represents.",
+        "teacher_look_for": "Student cannot read a data value from a bar graph or picture graph. Describes visual features (e.g., 'this bar is the tallest') without translating bar height or symbol count to a quantity. Does not use the scale or key to find values. Makes no attempt to compare categories or find a total. Work shows no connection between graph features and numerical data."
+      },
+      "2": {
+        "student_friendly": "I can read one number at a time from a bar graph or picture graph when each bar or picture equals 1. I am still working on graphs where each symbol stands for more than 1.",
+        "teacher_look_for": "Student reads a single category value correctly from a bar graph or picture graph scaled by 1. Struggles when the scale is 2, 5, or 10 — often reads the number of symbols or bar segments rather than multiplying by the scale factor. Cannot consistently solve 'how many more' or 'how many in all' problems. Does not check the key or scale before reading values."
+      },
+      "3": {
+        "student_friendly": "I can read a scaled bar graph or picture graph and use the data to answer questions. I can find totals and figure out how many more or fewer.",
+        "teacher_look_for": "Student reads and interprets scaled bar graphs and picture graphs accurately, applying the scale factor to find each category's value. Solves one- and two-step comparison problems ('how many more/fewer') and total problems using graph data. Work includes a labeled equation or clear arithmetic connecting graph values to the computed answer. Consistently references the scale or key before reading."
+      },
+      "4": {
+        "student_friendly": "I can build my own scaled bar graph from data, pick a scale that makes the graph easy to read, and use the graph to answer questions and explain what the data tells us about a real situation.",
+        "teacher_look_for": "Student constructs a complete scaled bar graph from raw data — with title, axis labels, consistent scale, and accurate bars. Explains their scale choice in writing or orally (e.g., 'I used a scale of 5 because my largest value is 40 and that keeps the graph a good size'). Uses the completed graph to answer multi-step comparison and total questions. Draws at least one data-based conclusion framed in the real-world context of the data set, going beyond restating values."
+      }
+    }
+  }
+}

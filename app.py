@@ -271,6 +271,8 @@ class RubricHandler(BaseHTTPRequestHandler):
                 content_type = "text/css; charset=utf-8"
             elif file_path.suffix == ".js":
                 content_type = "application/javascript; charset=utf-8"
+            elif file_path.suffix == ".json":
+                content_type = "application/json; charset=utf-8"
             return serve_file(self, file_path, content_type)
 
         if path == "/api/classes":

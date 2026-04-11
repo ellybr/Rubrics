@@ -236,6 +236,7 @@ const DIFFICULTY_META = {
 
 let state = {};
 let activeClaim = 0;
+let rubrics = {};
 
 function initState() {
   ITEMS.forEach((item) => {
@@ -444,6 +445,71 @@ function renderFeedback(item) {
     </div>`;
 }
 
+// ── Rubric loading & display ──────────────────────────────────────────────────
+
+async function loadRubrics() {
+  try {
+    const res = await fetch("/static/sbac_rubrics.json");
+    if (res.ok) rubrics = await res.json();
+  } catch (_) {
+    // non-fatal — dashboard works without rubrics
+  }
+}
+
+const RUBRIC_LEVEL_META = {
+  "1": { label: "Level 1 — Beginning",   text: "#b91c1c", bg: "#fef2f2", border: "#fca5a5" },
+  "2": { label: "Level 2 — Developing",  text: "#d97706", bg: "#fffbeb", border: "#fcd34d" },
+  "3": { label: "Level 3 — Proficient",  text: "#15803d", bg: "#f0fdf4", border: "#86efac" },
+  "4": { label: "Level 4 — Extending",   text: "#1d4ed8", bg: "#eff6ff", border: "#93c5fd" },
+};
+
+function showRubric(standard) {
+  const rubric = rubrics[standard];
+  if (!rubric) return;
+
+  const modal = document.getElementById("rubric-modal");
+  document.getElementById("rubric-modal-standard").textContent = standard;
+  document.getElementById("rubric-modal-title").textContent = rubric.standard_name;
+  document.getElementById("rubric-modal-claim").textContent = rubric.claim;
+
+  document.getElementById("rubric-modal-body").innerHTML = Object.entries(
+    rubric.levels
+  )
+    .map(([lvl, data]) => {
+      const m = RUBRIC_LEVEL_META[lvl];
+      return `
+        <div class="rubric-level-card" style="border-color:${m.border}">
+          <div class="rubric-level-heading" style="color:${m.text};background:${m.bg}">
+            ${m.label}
+          </div>
+          <div class="rubric-level-body">
+            <div class="rubric-section">
+              <div class="rubric-section-label">Student</div>
+              <p class="rubric-section-text">${data.student_friendly}</p>
+            </div>
+            <div class="rubric-section">
+              <div class="rubric-section-label">Teacher looks for</div>
+              <p class="rubric-section-text">${data.teacher_look_for}</p>
+            </div>
+          </div>
+        </div>`;
+    })
+    .join("");
+
+  modal.showModal();
+}
+
+function initRubricModal() {
+  const modal = document.getElementById("rubric-modal");
+  document.getElementById("rubric-modal-close").addEventListener("click", () =>
+    modal.close()
+  );
+  modal.addEventListener("click", (e) => {
+    // close on backdrop click
+    if (e.target === modal) modal.close();
+  });
+}
+
 // ── Item card ────────────────────────────────────────────────────────────────
 
 function renderItemCard(item) {
@@ -461,6 +527,10 @@ function renderItemCard(item) {
     .filter(Boolean)
     .join("");
 
+  const rubricBtn = rubrics[item.standard]
+    ? `<button class="rubric-btn" data-standard="${item.standard}" title="View rubric for ${item.standard}">Rubric</button>`
+    : "";
+
   const checkBtn = !s.checked
     ? `<button class="check-btn" data-id="${item.id}">Check Answer</button>`
     : "";
@@ -469,7 +539,10 @@ function renderItemCard(item) {
     <div class="${cardCls}" id="item-card-${item.id}">
       <div class="item-header">
         <div class="item-badges">${tags}</div>
-        <span class="item-num">Item ${item.id}</span>
+        <div class="item-header-right">
+          ${rubricBtn}
+          <span class="item-num">Item ${item.id}</span>
+        </div>
       </div>
       <div class="item-question">${item.question.replace(/\n/g, "<br>")}</div>
       ${renderAnswerArea(item)}
@@ -566,8 +639,15 @@ function renderItems() {
 }
 
 function attachHandlers(item) {
-  const btn = document.querySelector(`.check-btn[data-id="${item.id}"]`);
-  if (btn) btn.addEventListener("click", () => checkAnswer(item.id));
+  const card = document.getElementById(`item-card-${item.id}`);
+  if (!card) return;
+
+  const checkBtn = card.querySelector(".check-btn");
+  if (checkBtn) checkBtn.addEventListener("click", () => checkAnswer(item.id));
+
+  const rubricBtn = card.querySelector(".rubric-btn");
+  if (rubricBtn)
+    rubricBtn.addEventListener("click", () => showRubric(rubricBtn.dataset.standard));
 }
 
 // ── Answer checking ──────────────────────────────────────────────────────────
@@ -616,8 +696,10 @@ function checkAnswer(itemId) {
 
 // ── Boot ─────────────────────────────────────────────────────────────────────
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   initState();
+  initRubricModal();
+  await loadRubrics();   // load before first render so rubric buttons appear immediately
   renderClaimTabs();
   renderItems();
   updateProgress();
