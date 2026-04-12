@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "rubrics.db"
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
+GRADE3_DIR = BASE_DIR / "grade3-sbac-dashboard"
 
 
 def get_db_connection() -> sqlite3.Connection:
@@ -254,6 +255,27 @@ class RubricHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(html.encode("utf-8"))
             return
+
+        if path == "/grade3":
+            self.send_response(301)
+            self.send_header("Location", "/grade3/")
+            self.end_headers()
+            return
+
+        if path == "/grade3/":
+            serve_file(self, GRADE3_DIR / "index.html", "text/html; charset=utf-8")
+            return
+
+        if path.startswith("/grade3/assets/"):
+            rel = path.replace("/grade3/assets/", "", 1)
+            file_path = GRADE3_DIR / "assets" / rel
+            ext = Path(rel).suffix
+            ct = {"css": "text/css; charset=utf-8", "js": "application/javascript; charset=utf-8"}.get(ext.lstrip("."), "text/plain")
+            return serve_file(self, file_path, ct)
+
+        if path.startswith("/grade3/data/"):
+            rel = path.replace("/grade3/data/", "", 1)
+            return serve_file(self, GRADE3_DIR / "data" / rel, "application/json; charset=utf-8")
 
         if path == "/sbac":
             html = (TEMPLATES_DIR / "sbac.html").read_text(encoding="utf-8")
