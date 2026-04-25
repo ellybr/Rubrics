@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "rubrics.db"
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
+GAME_DIR = BASE_DIR / "game"
 
 
 def get_db_connection() -> sqlite3.Connection:
@@ -263,6 +264,23 @@ class RubricHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(html.encode("utf-8"))
             return
+
+        if path == "/game" or path == "/game/":
+            return serve_file(self, GAME_DIR / "index.html", "text/html; charset=utf-8")
+
+        if path.startswith("/game/"):
+            rel = path[len("/game/"):]
+            file_path = GAME_DIR / rel
+            ext = file_path.suffix
+            content_type = {
+                ".html": "text/html; charset=utf-8",
+                ".css": "text/css; charset=utf-8",
+                ".js": "application/javascript; charset=utf-8",
+                ".json": "application/json; charset=utf-8",
+                ".png": "image/png",
+                ".jpg": "image/jpeg",
+            }.get(ext, "application/octet-stream")
+            return serve_file(self, file_path, content_type)
 
         if path.startswith("/static/"):
             file_path = STATIC_DIR / path.replace("/static/", "")
